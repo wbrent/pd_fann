@@ -444,8 +444,6 @@ is \, the more "confident" the net can be said to be about its prediction.
 0;
 #X text 309 38 [fann] is an interface to the FANN library for neural
 networks: http://leenissen.dk/fann/wp/;
-#X text 416 486 Updated and expanded from David Morelli's [ann_mlp]
-;
 #X text 309 78 The FANN library has many functions for creating \,
 configuring \, training \, running \, and saving neural networks. [fann]
 accepts a variety of messages for executing FANN functions \, making
@@ -761,7 +759,9 @@ are many different types of nets. [fann] creates a multilayer perceptron
 #X floatatom 88 367 10 0 0 1 epochs - -, f 10;
 #X text 211 451 << see inside for how to process output layer data
 , f 17;
-#X connect 3 0 10 0;
-#X connect 10 0 4 0;
-#X connect 10 1 17 0;
-#X connect 10 2 0 0;
+#X text 416 486 Updated and expanded from Davide Morelli's [ann_mlp]
+;
+#X connect 3 0 9 0;
+#X connect 9 0 4 0;
+#X connect 9 1 16 0;
+#X connect 9 2 0 0;
