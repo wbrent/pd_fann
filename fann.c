@@ -170,7 +170,7 @@ static void pdFann_print(t_fann *x)
 		else
 			post("status\t\t\t\t%s", "TRAINING");
 
-		post("total layers (including input/output layers)\t\t\t\t%i", fann_get_num_layers(x->x_ann));
+		post("total layers\t\t\t\t%i", fann_get_num_layers(x->x_ann));
 			
 		post("input layer [0] size\t\t\t\t%i", fann_get_num_input(x->x_ann));
 
