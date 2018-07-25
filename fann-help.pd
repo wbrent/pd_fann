@@ -1,6 +1,6 @@
 #N canvas 203 186 762 566 10;
 #X floatatom 128 337 10 0 0 1 MSE - -, f 10;
-#N canvas 74 58 1158 662 create-net 0;
+#N canvas 105 92 1158 662 create-net 0;
 #X msg 170 546 destroy;
 #X obj 32 605 s \$0-fann;
 #X obj 93 274 cnv 15 550 240 empty empty empty 20 12 0 14 -233017 -66577
@@ -176,7 +176,7 @@ library itself \, the default activation function is FANN_SIGMOID_STEPWISE.
 #X connect 19 0 17 0;
 #X connect 20 0 18 0;
 #X restore 152 112 pd set-activation-function-output;
-#N canvas 721 26 761 592 set-activation-function-layer 0;
+#N canvas 607 75 761 592 set-activation-function-layer 0;
 #X msg 49 108 FANN_LINEAR;
 #X msg 49 138 FANN_THRESHOLD;
 #X msg 49 168 FANN_THRESHOLD_SYMMETRIC;
@@ -233,7 +233,7 @@ the input layer.;
 #X connect 21 0 20 0;
 #X connect 22 0 21 1;
 #X restore 82 52 pd set-activation-function-layer;
-#N canvas 721 26 749 647 set-activation-function 0;
+#N canvas 564 88 749 647 set-activation-function 0;
 #X msg 49 108 FANN_LINEAR;
 #X msg 49 138 FANN_THRESHOLD;
 #X msg 49 168 FANN_THRESHOLD_SYMMETRIC;
