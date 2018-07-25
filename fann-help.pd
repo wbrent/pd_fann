@@ -96,9 +96,9 @@ input layer (layer 0) is not counted.;
 #X obj 129 514 outlet;
 #X msg 282 132 FANN_ELLIOT;
 #X text 40 34 During initial creation of a net \, [fann] sets the hidden
-and output layer activation functions to FANN_SIGMOID. For the FANN
-library itself \, the default activation function is FANN_SIGMOID_STEPWISE.
-;
+and output layer activation functions to FANN_SIGMOID \, and FANN_SIGMOID_SYMMETRIC
+\, respectively. For the FANN library itself \, the default activation
+function is FANN_SIGMOID_STEPWISE.;
 #X connect 0 0 16 0;
 #X connect 1 0 16 0;
 #X connect 2 0 16 0;
@@ -152,9 +152,9 @@ library itself \, the default activation function is FANN_SIGMOID_STEPWISE.
 #X msg 282 122 FANN_ELLIOT;
 #X msg 129 453 set_activation_function_output \$1;
 #X text 40 28 During initial creation of a net \, [fann] sets the hidden
-and output layer activation functions to FANN_SIGMOID. For the FANN
-library itself \, the default activation function is FANN_SIGMOID_STEPWISE.
-;
+and output layer activation functions to FANN_SIGMOID \, and FANN_SIGMOID_SYMMETRIC
+\, respectively. For the FANN library itself \, the default activation
+function is FANN_SIGMOID_STEPWISE.;
 #X connect 0 0 16 0;
 #X connect 1 0 16 0;
 #X connect 2 0 16 0;
@@ -203,13 +203,13 @@ library itself \, the default activation function is FANN_SIGMOID_STEPWISE.
 #X text 420 405 \$1: symbolic name of activation function;
 #X text 420 425 \$2: layer number (starting at 0 for input layer);
 #X text 420 385 Arguments:;
-#X text 47 34 During initial creation of a net \, [fann] sets the hidden
-and output layer activation functions to FANN_SIGMOID. For the FANN
-library itself \, the default activation function is FANN_SIGMOID_STEPWISE.
-;
 #X text 209 504 Specify the activation function for a particular layer.
 As of FANN 2 \, it is not possible to set the activation function of
 the input layer.;
+#X text 47 34 During initial creation of a net \, [fann] sets the hidden
+and output layer activation functions to FANN_SIGMOID \, and FANN_SIGMOID_SYMMETRIC
+\, respectively. For the FANN library itself \, the default activation
+function is FANN_SIGMOID_STEPWISE.;
 #X connect 0 0 16 0;
 #X connect 1 0 16 0;
 #X connect 2 0 16 0;
@@ -258,10 +258,6 @@ the input layer.;
 #X text 409 346 \$1: symbolic name of activation function;
 #X text 409 366 \$2: layer number (starting at 0 for input layer);
 #X text 409 326 Arguments:;
-#X text 47 34 During initial creation of a net \, [fann] sets the hidden
-and output layer activation functions to FANN_SIGMOID. For the FANN
-library itself \, the default activation function is FANN_SIGMOID_STEPWISE.
-;
 #X obj 136 479 pack s 1 0;
 #X floatatom 336 449 5 0 0 1 neuron - -, f 5;
 #X text 409 386 \$3: neuron number (starting at 0);
@@ -269,6 +265,10 @@ library itself \, the default activation function is FANN_SIGMOID_STEPWISE.
 #X text 209 544 Specify the activation function for a particular layer.
 As of FANN 2 \, it is not possible to set the activation function of
 the input layer.;
+#X text 47 34 During initial creation of a net \, [fann] sets the hidden
+and output layer activation functions to FANN_SIGMOID \, and FANN_SIGMOID_SYMMETRIC
+\, respectively. For the FANN library itself \, the default activation
+function is FANN_SIGMOID_STEPWISE.;
 #X connect 0 0 16 0;
 #X connect 1 0 16 0;
 #X connect 2 0 16 0;
@@ -285,13 +285,13 @@ the input layer.;
 #X connect 13 0 17 0;
 #X connect 14 0 17 0;
 #X connect 15 0 17 0;
-#X connect 16 0 25 0;
-#X connect 17 0 25 0;
+#X connect 16 0 24 0;
+#X connect 17 0 24 0;
 #X connect 19 0 17 0;
-#X connect 20 0 25 1;
-#X connect 25 0 28 0;
-#X connect 26 0 25 2;
-#X connect 28 0 18 0;
+#X connect 20 0 24 1;
+#X connect 24 0 27 0;
+#X connect 25 0 24 2;
+#X connect 27 0 18 0;
 #X restore 42 22 pd set-activation-function;
 #X msg 502 482 print_parameters;
 #X text 523 452 Post all ANN parameters to Pd console;
