@@ -1,4 +1,5 @@
 .DS_Store
+*.o
 fann.pd_linux
 fann.pd_darwin
 fann.dll
