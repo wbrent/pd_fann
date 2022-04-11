@@ -8,7 +8,7 @@ lib.name = fann
 # specify the location and name of libfann.a
 ldlibs = -L/usr/local/lib -lfann
 
-# specify the location of FFTW header file
+# specify the location of header files
 cflags = -Iinclude -I/usr/local/include
 
 $(lib.name).class.sources = ./fann.c
