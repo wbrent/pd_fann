@@ -1,7 +1,0 @@
-When building FANN:
-
-Was able to build 32/64bit libfann.a by adding
-
-CMAKE_C_FLAGS:STRING=-arch i386 -arch x86_64
-
-to CMakeCache.txt in ./fann. It passes those flags on when creating the make files for the various lib versions.

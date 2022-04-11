@@ -1,9 +1,7 @@
 SOURCES = fann.c
 
 # ****SUPPLY THE LOCATION OF PD SOURCE****
-# pd_src = /home/pi/PUREDATA/pd-0.48-1
-pd_src = /Users/williambrent/Dropbox/PUREDATA/pd-0.48-1
-# pd_src = "C:\Program Files (x86)\Pd"
+pd_src = /Applications/Pd-0.52-2.app/Contents/Resources
 
 CFLAGS = -DPD -I$(pd_src)/src -I/usr/local/include -Wall -W -g
 
@@ -14,7 +12,7 @@ ifeq ($(UNAME),Darwin)
   OS = macosx
   LIBDIR = /usr/local/lib
   OPT_CFLAGS = -O3 -ftree-vectorize -Wshadow -Wstrict-prototypes -Wno-unused -Wno-parentheses -Wno-switch
-  FAT_FLAGS = -arch i386 -arch x86_64
+  FAT_FLAGS = -arch x86_64
   CFLAGS += -fPIC $(FAT_FLAGS)
   LDFLAGS += -bundle -undefined dynamic_lookup $(FAT_FLAGS)
   LIBS += -lc -L$(LIBDIR) -lfann
