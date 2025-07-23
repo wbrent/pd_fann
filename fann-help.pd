@@ -1,25 +1,20 @@
-#N canvas 203 186 762 566 10;
-#X floatatom 128 337 10 0 0 1 MSE - -, f 10;
+#N canvas 203 186 811 554 12;
+#X floatatom 128 337 10 0 0 1 MSE - - 0;
 #N canvas 105 92 1158 662 create-net 0;
 #X msg 170 546 destroy;
 #X obj 32 605 s \$0-fann;
-#X obj 93 274 cnv 15 550 240 empty empty empty 20 12 0 14 -233017 -66577
-0;
+#X obj 93 274 cnv 15 550 240 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
 #X text 209 472 learning rate: 0.3;
 #X text 209 452 connection rate: 0.9;
-#X obj 744 106 cnv 15 350 270 empty empty empty 20 12 0 14 -233017
--66577 0;
+#X obj 744 106 cnv 15 350 270 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
 #X text 763 262 ...;
 #X text 763 282 ...;
-#X obj 16 11 cnv 15 550 200 empty empty empty 20 12 0 14 -233017 -66577
-0;
+#X obj 16 11 cnv 15 550 200 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
 #X text 108 149 connection rate: 1;
 #X text 108 169 learning rate: 0.25;
 #X text 763 122 Argument list for "create" message:;
 #X text 248 544 Destroy the current net;
-#X text 257 22 (e.g. \, if your input data consists of 5-dimensional
-vectors and you want to classify inputs as one of 12 possible items)
-, f 36;
+#X text 257 22 (e.g. \, if your input data consists of 5-dimensional vectors and you want to classify inputs as one of 12 possible items), f 36;
 #X text 319 134 Layer 0: input layer, f 45;
 #X text 339 154 Layer 1 (hidden): 9 neurons, f 45;
 #X text 319 174 Layer 2: output layer, f 45;
@@ -48,9 +43,7 @@ vectors and you want to classify inputs as one of 12 possible items)
 #X text 763 302 $<H+3>: number of units in hidden layer H;
 #X text 763 322 $<H+4>: connection rate;
 #X text 763 342 $<H+5>: learning rate;
-#X text 696 451 Typically \, a neural net with 5 total layers (including
-input and output layers) would be described as a 4-layer network. The
-input layer (layer 0) is not counted.;
+#X text 696 451 Typically \, a neural net with 5 total layers (including input and output layers) would be described as a 4-layer network. The input layer (layer 0) is not counted.;
 #X connect 0 0 1 0;
 #X connect 22 0 1 0;
 #X connect 23 0 1 0;
@@ -95,10 +88,7 @@ input layer (layer 0) is not counted.;
 #X msg 129 463 set_activation_function_hidden \$1;
 #X obj 129 514 outlet;
 #X msg 282 132 FANN_ELLIOT;
-#X text 40 34 During initial creation of a net \, [fann] sets the hidden
-and output layer activation functions to FANN_SIGMOID \, and FANN_SIGMOID_SYMMETRIC
-\, respectively. For the FANN library itself \, the default activation
-function is FANN_SIGMOID_STEPWISE.;
+#X text 40 14 During initial creation of a net \, [fann] sets the hidden and output layer activation functions to FANN_SIGMOID \, and FANN_SIGMOID_SYMMETRIC \, respectively. For the FANN library itself \, the default activation function is FANN_SIGMOID_STEPWISE.;
 #X connect 0 0 16 0;
 #X connect 1 0 16 0;
 #X connect 2 0 16 0;
@@ -122,39 +112,35 @@ function is FANN_SIGMOID_STEPWISE.;
 #X restore 122 82 pd set-activation-function-hidden;
 #X msg 472 452 print;
 #X msg 322 302 post_callback \$1;
-#X obj 322 282 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X msg 292 252 learning_rate 0.3;
+#X obj 322 272 tgl 19 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X msg 292 242 learning_rate 0.3;
 #X msg 382 362 reset_mse;
 #X msg 352 332 iterations_between_reports 500;
 #X msg 442 422 last_error;
 #X obj 42 562 s \$0-fann;
 #N canvas 844 134 528 579 set-activation-function-output 0;
-#X msg 42 92 FANN_LINEAR;
-#X msg 42 122 FANN_THRESHOLD;
-#X msg 42 152 FANN_THRESHOLD_SYMMETRIC;
-#X msg 42 182 FANN_SIGMOID;
-#X msg 42 212 FANN_SIGMOID_STEPWISE;
-#X msg 42 242 FANN_SIGMOID_SYMMETRIC;
-#X msg 42 272 FANN_SIGMOID_SYMMETRIC_STEPWISE;
-#X msg 42 302 FANN_GAUSSIAN;
-#X msg 42 332 FANN_GAUSSIAN_SYMMETRIC;
-#X msg 282 152 FANN_ELLIOT_SYMMETRIC;
-#X msg 282 182 FANN_LINEAR_PIECE;
-#X msg 282 212 FANN_LINEAR_PIECE_SYMMETRIC;
-#X msg 282 242 FANN_SIN_SYMMETRIC;
-#X msg 282 272 FANN_COS_SYMMETRIC;
-#X msg 282 302 FANN_SIN;
-#X msg 282 331 FANN_COS;
-#X obj 42 382 symbol;
-#X obj 282 383 symbol;
-#X obj 129 504 outlet;
-#X msg 282 122 FANN_ELLIOT;
-#X msg 129 453 set_activation_function_output \$1;
-#X text 40 28 During initial creation of a net \, [fann] sets the hidden
-and output layer activation functions to FANN_SIGMOID \, and FANN_SIGMOID_SYMMETRIC
-\, respectively. For the FANN library itself \, the default activation
-function is FANN_SIGMOID_STEPWISE.;
+#X msg 42 112 FANN_LINEAR;
+#X msg 42 142 FANN_THRESHOLD;
+#X msg 42 172 FANN_THRESHOLD_SYMMETRIC;
+#X msg 42 202 FANN_SIGMOID;
+#X msg 42 232 FANN_SIGMOID_STEPWISE;
+#X msg 42 262 FANN_SIGMOID_SYMMETRIC;
+#X msg 42 292 FANN_SIGMOID_SYMMETRIC_STEPWISE;
+#X msg 42 322 FANN_GAUSSIAN;
+#X msg 42 352 FANN_GAUSSIAN_SYMMETRIC;
+#X msg 282 172 FANN_ELLIOT_SYMMETRIC;
+#X msg 282 202 FANN_LINEAR_PIECE;
+#X msg 282 232 FANN_LINEAR_PIECE_SYMMETRIC;
+#X msg 282 262 FANN_SIN_SYMMETRIC;
+#X msg 282 292 FANN_COS_SYMMETRIC;
+#X msg 282 322 FANN_SIN;
+#X msg 282 351 FANN_COS;
+#X obj 42 402 symbol;
+#X obj 282 403 symbol;
+#X obj 129 524 outlet;
+#X msg 282 142 FANN_ELLIOT;
+#X msg 129 473 set_activation_function_output \$1;
+#X text 40 28 During initial creation of a net \, [fann] sets the hidden and output layer activation functions to FANN_SIGMOID \, and FANN_SIGMOID_SYMMETRIC \, respectively. For the FANN library itself \, the default activation function is FANN_SIGMOID_STEPWISE.;
 #X connect 0 0 16 0;
 #X connect 1 0 16 0;
 #X connect 2 0 16 0;
@@ -176,7 +162,7 @@ function is FANN_SIGMOID_STEPWISE.;
 #X connect 19 0 17 0;
 #X connect 20 0 18 0;
 #X restore 152 112 pd set-activation-function-output;
-#N canvas 607 75 761 592 set-activation-function-layer 0;
+#N canvas 607 75 798 599 set-activation-function-layer 0;
 #X msg 49 108 FANN_LINEAR;
 #X msg 49 138 FANN_THRESHOLD;
 #X msg 49 168 FANN_THRESHOLD_SYMMETRIC;
@@ -199,17 +185,12 @@ function is FANN_SIGMOID_STEPWISE.;
 #X msg 289 138 FANN_ELLIOT;
 #X msg 136 469 set_activation_function_layer \$1 \$2;
 #X obj 136 439 pack s 1;
-#X floatatom 216 439 5 1 1000 1 layer - -, f 5;
+#X floatatom 216 439 5 1 1000 1 layer - - 0;
 #X text 420 405 \$1: symbolic name of activation function;
 #X text 420 425 \$2: layer number (starting at 0 for input layer);
 #X text 420 385 Arguments:;
-#X text 209 504 Specify the activation function for a particular layer.
-As of FANN 2 \, it is not possible to set the activation function of
-the input layer.;
-#X text 47 34 During initial creation of a net \, [fann] sets the hidden
-and output layer activation functions to FANN_SIGMOID \, and FANN_SIGMOID_SYMMETRIC
-\, respectively. For the FANN library itself \, the default activation
-function is FANN_SIGMOID_STEPWISE.;
+#X text 209 504 Specify the activation function for a particular layer. As of FANN 2 \, it is not possible to set the activation function of the input layer.;
+#X text 47 24 During initial creation of a net \, [fann] sets the hidden and output layer activation functions to FANN_SIGMOID \, and FANN_SIGMOID_SYMMETRIC \, respectively. For the FANN library itself \, the default activation function is FANN_SIGMOID_STEPWISE.;
 #X connect 0 0 16 0;
 #X connect 1 0 16 0;
 #X connect 2 0 16 0;
@@ -233,7 +214,7 @@ function is FANN_SIGMOID_STEPWISE.;
 #X connect 21 0 20 0;
 #X connect 22 0 21 1;
 #X restore 82 52 pd set-activation-function-layer;
-#N canvas 564 88 749 647 set-activation-function 0;
+#N canvas 564 88 796 633 set-activation-function 0;
 #X msg 49 108 FANN_LINEAR;
 #X msg 49 138 FANN_THRESHOLD;
 #X msg 49 168 FANN_THRESHOLD_SYMMETRIC;
@@ -254,21 +235,16 @@ function is FANN_SIGMOID_STEPWISE.;
 #X obj 289 399 symbol;
 #X obj 136 560 outlet;
 #X msg 289 138 FANN_ELLIOT;
-#X floatatom 246 449 5 1 10000 1 layer - -, f 5;
+#X floatatom 246 449 5 1 10000 1 layer - - 0;
 #X text 409 346 \$1: symbolic name of activation function;
 #X text 409 366 \$2: layer number (starting at 0 for input layer);
 #X text 409 326 Arguments:;
 #X obj 136 479 pack s 1 0;
-#X floatatom 336 449 5 0 0 1 neuron - -, f 5;
+#X floatatom 336 449 5 0 0 1 neuron - - 0;
 #X text 409 386 \$3: neuron number (starting at 0);
 #X msg 136 509 set_activation_function \$1 \$2 \$3;
-#X text 209 544 Specify the activation function for a particular layer.
-As of FANN 2 \, it is not possible to set the activation function of
-the input layer.;
-#X text 47 34 During initial creation of a net \, [fann] sets the hidden
-and output layer activation functions to FANN_SIGMOID \, and FANN_SIGMOID_SYMMETRIC
-\, respectively. For the FANN library itself \, the default activation
-function is FANN_SIGMOID_STEPWISE.;
+#X text 209 544 Specify the activation function for a particular layer. As of FANN 2 \, it is not possible to set the activation function of the input layer.;
+#X text 47 24 During initial creation of a net \, [fann] sets the hidden and output layer activation functions to FANN_SIGMOID \, and FANN_SIGMOID_SYMMETRIC \, respectively. For the FANN library itself \, the default activation function is FANN_SIGMOID_STEPWISE.;
 #X connect 0 0 16 0;
 #X connect 1 0 16 0;
 #X connect 2 0 16 0;
@@ -337,68 +313,40 @@ function is FANN_SIGMOID_STEPWISE.;
 #X connect 17 0 9 0;
 #X restore 312 353 pd net-settings;
 #X obj 57 171 r \$0-fann;
-#N canvas 49 330 941 571 process-output 0;
-#X obj 325 314 list prepend 0;
+#N canvas 73 310 965 619 process-output 0;
+#X obj 325 344 list prepend 0;
 #X obj 321 59 inlet;
-#X obj 368 105 list length;
-#X obj 541 435 change;
-#X obj 541 459 pack f \$0;
-#X obj 756 451 table \$0-fann-output;
-#X msg 541 483 \; \$2-fann-output resize \$1 \;;
-#X obj 325 338 s \$0-fann-output;
-#X obj 276 378 array max \$0-fann-output;
-#X floatatom 276 472 5 0 0 1 confidence - -, f 5;
-#X floatatom 276 442 5 0 0 1 classID - -, f 5;
-#X obj 276 208 spigot;
-#X obj 368 131 > 1;
-#X obj 276 229 t b l l;
-#X obj 321 79 t l l l;
-#X obj 126 200 swap 1;
-#X obj 126 221 -;
-#X obj 61 209 spigot;
-#X obj 61 230 t f f;
-#X obj 61 252 + 0.5;
-#X obj 61 272 i;
-#X msg 96 386 1;
-#X obj 96 407 -;
-#X obj 61 304 select 0 1;
-#X obj 61 355 t b b;
-#X msg 61 376 0;
-#X obj 151 355 t b b;
-#X obj 186 377 f;
-#X msg 151 376 1;
-#X obj 541 411 list length;
-#X text 20 18 When the output layer has only one unit in order to classify
-input as either true/false \, the data needs to be handled differently.
-Rather than sending a list to a table \, the result is stored then
-rounded to show as either 1 or 0 (true or false). Either the data or
-its complement (1-y) is used here as a basic "confidence" indicator.
-, f 41;
-#X text 494 26 Output from [fann]'s first outlet should be handled
-differently based on the number of units in the output layer. When
-classifying as a simple true/false \, the output layer will have only
-one unit \, and with the default sigmoid activation function \, it
-will have a 0 to 1 range. By simply rounding this single number output
-\, you can classify as either true (1) or false (0). This is illustrated
-here via an incremental XOR example found in another subpatch.;
-#X text 494 131 When classifying input data as belonging to one of
-two or more classes \, the output layer will typically have more than
-one unit \, each using a sigmoid activation function. For instance
-\, in the "quadrant" batch training example found in another subpatch
-of this help file \, the goal is to classify input as falling within
-one of 4 quadrants. Accordingly \, the output layer has 4 units \,
-each outputting a number in the 0 to 1 range. In that case \, each
-unit represents a true/false prediction for the data falling in its
-associated quadrant \, so the best overall prediction is the unit reporting
-the highest value. Here \, the output layer results are sent to a table
-(which changes size based on the length of the output list) \, and
-[array max] is used to find the index of the highest result which is
-interpreted as the predicted class ID. The actual result of that unit
-is used here as an indicator of confidence. A more meaningful confidence
-indicator would look at the difference between the highest unit output
-and the output of the other units. The more of a discrepancy there
-is \, the more "confident" the net can be said to be about its prediction.
-;
+#X obj 368 135 list length;
+#X obj 541 485 change;
+#X obj 541 509 pack f \$0;
+#X obj 756 501 table \$0-fann-output;
+#X msg 541 533 \; \$2-fann-output resize \$1 \;;
+#X obj 325 368 s \$0-fann-output;
+#X obj 276 408 array max \$0-fann-output;
+#X floatatom 276 502 5 0 0 1 confidence - - 0;
+#X floatatom 276 472 5 0 0 1 classID - - 0;
+#X obj 276 238 spigot;
+#X obj 368 161 > 1;
+#X obj 276 259 t b l l;
+#X obj 321 109 t l l l;
+#X obj 126 210 swap 1;
+#X obj 126 241 -;
+#X obj 61 219 spigot;
+#X obj 61 250 t f f;
+#X obj 61 282 + 0.5;
+#X obj 61 312 i;
+#X msg 96 436 1;
+#X obj 96 467 -;
+#X obj 61 344 select 0 1;
+#X obj 61 395 t b b;
+#X msg 61 426 0;
+#X obj 151 395 t b b;
+#X obj 186 427 f;
+#X msg 151 426 1;
+#X obj 541 461 list length;
+#X text 20 18 When the output layer has only one unit in order to classify input as either true/false \, the data needs to be handled differently. Rather than sending a list to a table \, the result is stored then rounded to show as either 1 or 0 (true or false). Either the data or its complement (1-y) is used here as a basic "confidence" indicator., f 39;
+#X text 494 26 Output from [fann]'s first outlet should be handled differently based on the number of units in the output layer. When classifying as a simple true/false \, the output layer will have only one unit \, and with the default sigmoid activation function \, it will have a 0 to 1 range. By simply rounding this single number output \, you can classify as either true (1) or false (0). This is illustrated here via an incremental XOR example found in another subpatch.;
+#X text 494 161 When classifying input data as belonging to one of two or more classes \, the output layer will typically have more than one unit \, each using a sigmoid activation function. For instance \, in the "quadrant" batch training example found in another subpatch of this help file \, the goal is to classify input as falling within one of 4 quadrants. Accordingly \, the output layer has 4 units \, each outputting a number in the 0 to 1 range. In that case \, each unit represents a true/false prediction for the data falling in its associated quadrant \, so the best overall prediction is the unit reporting the highest value. Here \, the output layer results are sent to a table (which changes size based on the length of the output list) \, and [array max] is used to find the index of the highest result which is interpreted as the predicted class ID. The actual result of that unit is used here as an indicator of confidence. A more meaningful confidence indicator would look at the difference between the highest unit output and the output of the other units. The more of a discrepancy there is \, the more "confident" the net can be said to be about its prediction.;
 #X connect 0 0 7 0;
 #X connect 1 0 14 0;
 #X connect 2 0 12 0;
@@ -436,40 +384,25 @@ is \, the more "confident" the net can be said to be about its prediction.
 #X connect 27 0 9 0;
 #X connect 28 0 10 0;
 #X connect 29 0 3 0;
-#X coords 0 -1 1 1 140 90 1 270 410;
+#X coords 0 -1 1 1 140 90 1 270 440;
 #X restore 57 421 pd process-output;
-#X obj 2 2 cnv 15 10 400 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 2 2 cnv 15 400 10 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X text 309 38 [fann] is an interface to the FANN library for neural
-networks: http://leenissen.dk/fann/wp/;
-#X text 309 78 The FANN library has many functions for creating \,
-configuring \, training \, running \, and saving neural networks. [fann]
-accepts a variety of messages for executing FANN functions \, making
-it possible to create and train a neural net incrementally in real
-time \, or in batch mode using large datasets saved as separate files.
-See the series of subpatches below for information on how to create
-and configure the many parameters of a neural network.;
+#X obj 2 2 cnv 15 10 400 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
+#X obj 2 2 cnv 15 400 10 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
+#X text 309 38 [fann] is an interface to the FANN library for neural networks: http://leenissen.dk/fann/wp/;
+#X text 309 78 The FANN library has many functions for creating \, configuring \, training \, running \, and saving neural networks. [fann] accepts a variety of messages for executing FANN functions \, making it possible to create and train a neural net incrementally in real time \, or in batch mode using large datasets saved as separate files. See the series of subpatches below for information on how to create and configure the many parameters of a neural network.;
 #X obj 57 281 fann;
-#N canvas 579 588 810 338 save-and-load-net 0;
+#N canvas 579 588 897 338 save-and-load-net 0;
 #X obj 54 275 s \$0-fann;
 #X msg 84 154 save ./nets/xor.net;
 #X msg 54 124 load ./nets/xor.net;
 #X msg 314 124 load ./nets/quadrants.net;
 #X msg 344 154 save ./nets/quadrants.net;
-#X text 51 40 Load and save previously trained nets. This help file
-uses xor.net for the inremental training example \, and quadrants.net
-for the batch training 2D vector example. These are found in [pd train-net-incrementally]
-and [pd train-net-batch], f 83;
-#X obj 84 175 spigot;
-#X obj 134 175 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 344 175 spigot;
-#X obj 394 175 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X text 418 174 << write-protect safety so example nets aren't overwritten
-accidentally!;
+#X text 51 40 Load and save previously trained nets. This help file uses xor.net for the inremental training example \, and quadrants.net for the batch training 2D vector example. These are found in [pd train-net-incrementally] and [pd train-net-batch], f 83;
+#X obj 84 185 spigot;
+#X obj 144 185 tgl 19 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 344 185 spigot;
+#X obj 404 185 tgl 19 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X text 438 184 << write-protect safety so example nets aren't overwritten accidentally!;
 #X connect 1 0 6 0;
 #X connect 2 0 0 0;
 #X connect 3 0 0 0;
@@ -479,23 +412,15 @@ accidentally!;
 #X connect 8 0 0 0;
 #X connect 9 0 8 1;
 #X restore 492 383 pd save-and-load-net;
-#N canvas 804 92 862 459 train-net-incrementally 0;
-#X msg 75 98 train;
-#X obj 35 399 s \$0-fann;
-#X text 136 98 Enter training mode;
-#X text 206 238 Enter run mode;
-#X msg 155 238 run;
-#X text 438 173 http://libfann.github.io/fann/docs/files/fann_data-h.html#fann_train_enum
-;
-#X text 438 63 Incremental training updates weights after each training
-input is received. This process is not only slow \, but gives very
-different results than batch training algorithms where weights are
-only updated after a complete data set (epoch) is received. But for
-this simple example learning the exclusive-or (XOR) rule \, a 3-layer
-2-in/1-out net trained incrementally works just fine. Read more about
-the different training alorithms in the FANN documentation:;
-#X obj 115 128 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#N canvas 804 92 949 517 train-net-incrementally 0;
+#X msg 75 108 train;
+#X obj 35 459 s \$0-fann;
+#X text 136 108 Enter training mode;
+#X text 206 268 Enter run mode;
+#X msg 155 268 run;
+#X text 468 193 http://libfann.github.io/fann/docs/files/fann_data-h.html#fann_train_enum;
+#X text 468 83 Incremental training updates weights after each training input is received. This process is not only slow \, but gives very different results than batch training algorithms where weights are only updated after a complete data set (epoch) is received. But for this simple example learning the exclusive-or (XOR) rule \, a 3-layer 2-in/1-out net trained incrementally works just fine. Read more about the different training alorithms in the FANN documentation:;
+#X obj 115 138 tgl 19 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #N canvas 437 403 588 282 train-XOR 0;
 #X msg 23 160 0 0 0;
 #X msg 73 160 1 0 1;
@@ -505,10 +430,7 @@ the different training alorithms in the FANN documentation:;
 #X obj 23 50 metro 1;
 #X obj 23 221 outlet;
 #X obj 23 20 inlet;
-#X text 158 63 Randomly send either 0 0 \, 1 0 \, 0 1 \, or 1 1 \,
-along with the desired output (label) for each of those cases. When
-training incrementally \, you must send both the training input and
-desired output concatenated together as a single list.;
+#X text 158 63 Randomly send either 0 0 \, 1 0 \, 0 1 \, or 1 1 \, along with the desired output (label) for each of those cases. When training incrementally \, you must send both the training input and desired output concatenated together as a single list.;
 #X msg 173 160 1 1 0;
 #X connect 0 0 6 0;
 #X connect 1 0 6 0;
@@ -521,51 +443,38 @@ desired output concatenated together as a single list.;
 #X connect 5 0 4 0;
 #X connect 7 0 5 0;
 #X connect 9 0 6 0;
-#X restore 115 148 pd train-XOR;
-#X obj 155 276 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 155 296 t b b;
-#X obj 155 317 random 2;
-#X obj 155 338 pack f f;
-#X obj 215 317 random 2;
-#X obj 215 338 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 235 338 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X text 146 127 Generate training data;
-#X text 190 274 Generate random input data to test how well the net
-has learned XOR, f 35;
-#X text 32 24 Create a new net for this incremental training example
-;
-#X text 438 223 For input and output with higher dimensionality \,
-batch training is likely the best approach. See the subpatch below.
-;
-#X text 133 174 Watch the mean squared error (MSE) output and stop
-training when you reach a desired MSE (e.g. \, 0.1). It may take a
-while!, f 35;
-#X msg 35 48 create 2 1 1 3 1 0.2 \, set_training_algo FANN_TRAIN_INCREMENTAL
-\, set_activation_function_hidden FANN_SIGMOID;
-#X text 364 339 ****;
-#X text 364 419 ****;
-#X text 364 359 Note that data is sent out the MSE outlet during incremental
-training \, but the "epochs" outlet is inactive. Epoch data is only
-reported during batch training \, illustrated in the following subpatch.
-;
+#X restore 115 168 pd train-XOR;
+#X obj 155 346 t b b;
+#X obj 155 377 random 2;
+#X obj 155 408 pack f f;
+#X obj 225 377 random 2;
+#X obj 225 408 tgl 19 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 255 408 tgl 19 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X text 146 137 Generate training data;
+#X text 190 304 Generate random input data to test how well the net has learned XOR, f 35;
+#X text 32 24 Create a new net for this incremental training example;
+#X text 468 243 For input and output with higher dimensionality \, batch training is likely the best approach. See the subpatch below.;
+#X text 133 194 Watch the mean squared error (MSE) output and stop training when you reach a desired MSE (e.g. \, 0.1). It may take a while!, f 35;
+#X msg 35 48 create 2 1 1 3 1 0.2 \, set_training_algo FANN_TRAIN_INCREMENTAL \, set_activation_function_hidden FANN_SIGMOID;
+#X text 364 379 ****;
+#X text 364 459 ****;
+#X text 364 399 Note that data is sent out the MSE outlet during incremental training \, but the "epochs" outlet is inactive. Epoch data is only reported during batch training \, illustrated in the following subpatch.;
+#X obj 155 320 bng 19 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
 #X connect 0 0 1 0;
 #X connect 4 0 1 0;
 #X connect 7 0 8 0;
 #X connect 8 0 1 0;
 #X connect 9 0 10 0;
+#X connect 9 1 12 0;
 #X connect 10 0 11 0;
-#X connect 10 1 13 0;
-#X connect 11 0 12 0;
-#X connect 11 0 14 0;
-#X connect 12 0 1 0;
-#X connect 13 0 12 1;
-#X connect 13 0 15 0;
-#X connect 21 0 1 0;
+#X connect 10 0 13 0;
+#X connect 11 0 1 0;
+#X connect 12 0 11 1;
+#X connect 12 0 14 0;
+#X connect 20 0 1 0;
+#X connect 24 0 9 0;
 #X restore 492 323 pd train-net-incrementally;
-#N canvas 708 261 972 640 train-net-batch 0;
+#N canvas 708 261 1026 651 train-net-batch 0;
 #N canvas 473 101 954 654 generate-2D-training-data-file 0;
 #X obj 70 315 random;
 #X obj 70 336 +;
@@ -584,8 +493,7 @@ reported during batch training \, illustrated in the following subpatch.
 #X msg 216 165 50 0 50 50;
 #X msg 236 205 50 0 50 0;
 #X msg 246 225 50 50 50 0;
-#X obj 386 54 tgl 15 0 empty empty generate 17 7 0 10 -262144 -1 -1
-0 1;
+#X obj 386 44 tgl 19 0 empty empty generate 24 8 0 12 #fcfcfc #000000 #000000 0 1;
 #X obj 376 325 random 4;
 #X obj 199 502 f;
 #X obj 229 503 + 1;
@@ -599,9 +507,8 @@ reported during batch training \, illustrated in the following subpatch.
 #X msg 218 472 1;
 #X obj 507 506 f;
 #X msg 571 546 0;
-#X obj 386 74 bng 15 250 50 0 empty empty write-file 17 7 0 10 -262144
--1 -1;
-#X floatatom 506 74 10 0 0 2 instances - -, f 10;
+#X obj 386 74 bng 19 250 50 0 empty empty write-file 24 8 0 12 #fcfcfc #000000 #000000;
+#X floatatom 506 74 10 0 0 2 instances - - 0;
 #X obj 386 104 t b b;
 #X msg 582 387 write -c ./training-data/batch-data.txt;
 #X obj 70 125 metro 10;
@@ -611,16 +518,7 @@ reported during batch training \, illustrated in the following subpatch.
 #X obj 70 74 t b b;
 #X msg 70 95 1;
 #X obj 70 53 select 1;
-#X text 535 134 This subpatch generates random 2D vectors that fall
-into 4 quadrants \, and stores the results in a [text] object so that
-the data can be written to a text file for batch training purposes.
-When each random 2D vector is generated \, its corresponding label
-data is written on the following line. Thus \, each training data instance
-generates two lines in the text file. When the data generation process
-is turned off \, the expected "header" information for the training
-file is inserted at the first line of the text file. The header specifies
-the number of training instances \, the dimensionality of the input
-data \, and the dimensionality of the output (label) data.;
+#X text 535 134 This subpatch generates random 2D vectors that fall into 4 quadrants \, and stores the results in a [text] object so that the data can be written to a text file for batch training purposes. When each random 2D vector is generated \, its corresponding label data is written on the following line. Thus \, each training data instance generates two lines in the text file. When the data generation process is turned off \, the expected "header" information for the training file is inserted at the first line of the text file. The header specifies the number of training instances \, the dimensionality of the input data \, and the dimensionality of the output (label) data.;
 #X connect 0 0 1 0;
 #X connect 1 0 12 0;
 #X connect 2 0 3 0;
@@ -683,21 +581,11 @@ data \, and the dimensionality of the output (label) data.;
 #X connect 41 0 39 0;
 #X connect 41 1 35 0;
 #X coords 0 -1 1 1 250 80 1 370 20;
-#X restore 652 257 pd generate-2D-training-data-file;
-#X text 650 193 The subpatch below was used to create the training
-file ./training-data/batch-data.txt. Use these controls if you'd like
-to generate new data and write a new file., f 46;
-#X text 175 275 Use "train_on_file" to supply training data via a text
-file. The first line of the text file should be a header that specifies
-the number of training instances in the file \, input dimensionality
-\, and output dimensionality. The following lines contain each instance
-of training data followed by a line of corresponding label data. Thus
-\, a file with N training examples will have (N*2)+1 lines. All lines
-should terminate with a carriage return. See ./training-data/batch-data.txt
-for an example.;
+#X restore 652 287 pd generate-2D-training-data-file;
+#X text 650 213 The subpatch below was used to create the training file ./training-data/batch-data.txt. Use these controls if you'd like to generate new data and write a new file., f 46;
+#X text 175 295 Use "train_on_file" to supply training data via a text file. The first line of the text file should be a header that specifies the number of training instances in the file \, input dimensionality \, and output dimensionality. The following lines contain each instance of training data followed by a line of corresponding label data. Thus \, a file with N training examples will have (N*2)+1 lines. All lines should terminate with a carriage return. See ./training-data/batch-data.txt for an example.;
 #N canvas 645 233 356 468 generate-2D-test-data 0;
-#X obj 60 44 bng 15 250 50 0 empty empty generate 17 7 0 10 -262144
--1 -1;
+#X obj 60 44 bng 19 250 50 0 empty empty generate 24 8 0 12 #fcfcfc #000000 #000000;
 #X obj 60 155 t b b;
 #X obj 60 388 outlet;
 #X obj 60 337 pack f f;
@@ -705,8 +593,8 @@ for an example.;
 #X obj 60 297 / 100;
 #X obj 60 255 random 100;
 #X obj 180 255 random 100;
-#X floatatom 160 44 5 0 0 0 - - -, f 5;
-#X floatatom 200 44 5 0 0 0 - - -, f 5;
+#X floatatom 160 44 5 0 0 0 - - - 0;
+#X floatatom 200 44 5 0 0 0 - - - 0;
 #X connect 0 0 1 0;
 #X connect 1 0 6 0;
 #X connect 1 1 7 0;
@@ -718,49 +606,27 @@ for an example.;
 #X connect 6 0 5 0;
 #X connect 7 0 4 0;
 #X coords 0 -1 1 1 200 50 1 50 20;
-#X restore 249 462 pd generate-2D-test-data;
-#X text 469 439 This subpatch generates random 2D vectors that serve
-as input to a net trained on batch-data.txt. Generate input data by
-clicking the bang button and see if the correct class ID # is shown
-in the subpatch below [fann]. The four quadrants are interpreted as
-0: upper left \, 1: upper right \, 2: lower left \, 3: lower right.
-Since the 2D vectors are normalized 0-1 \, a vector like (0.6 \, 0.7)
-would be in the upper right quadrant (1).;
+#X restore 249 482 pd generate-2D-test-data;
+#X text 469 459 This subpatch generates random 2D vectors that serve as input to a net trained on batch-data.txt. Generate input data by clicking the bang button and see if the correct class ID # is shown in the subpatch below [fann]. The four quadrants are interpreted as 0: upper left \, 1: upper right \, 2: lower left \, 3: lower right. Since the 2D vectors are normalized 0-1 \, a vector like (0.6 \, 0.7) would be in the upper right quadrant (1).;
 #X text 49 77 Create a net for this batch training example;
-#X text 133 177 Note: this process locks Pd down until it is complete
-\, so Pd will be completely unresponsive. A confirmation message will
-appear in the post window when training is complete.;
-#X obj 51 574 s \$0-fann;
-#X text 49 17 Batch training on previously captured data is the most
-efficient way to develop an advanced machine learning system.;
-#X msg 136 221 train_on_file ./training-data/batch-data.txt;
-#X msg 51 101 create 2 4 1 3 1 0.5 \, max_iterations 9e+06 \, iterations_between_reports
-500 \, desired_error 0.01 \, set_training_algo FANN_TRAIN_BATCH \,
-set_activation_function_hidden FANN_SIGMOID;
+#X text 133 197 Note: this process locks Pd down until it is complete \, so Pd will be completely unresponsive. A confirmation message will appear in the post window when training is complete.;
+#X obj 51 594 s \$0-fann;
+#X text 49 17 Batch training on previously captured data is the most efficient way to develop an advanced machine learning system.;
+#X msg 136 251 train_on_file ./training-data/batch-data.txt;
+#X msg 51 101 create 2 4 1 3 1 0.5 \, max_iterations 9e+06 \, iterations_between_reports 500 \, desired_error 0.01 \, set_training_algo FANN_TRAIN_BATCH \, set_activation_function_hidden FANN_SIGMOID;
 #X text 502 16 ****;
-#X text 502 146 ****;
-#X text 502 36 Note that data is sent out the MSE and epoch outlets
-during batch training \, but Pd's GUI is locked up during the batch
-training process itself. A record of the MSE and epoch data can be
-seen by using [print] to post the data to Pd's console. It will appear
-suddenly once batch training is complete and Pd's GUI is unlocked.
-In batch training \, this data is provided mainly for monitoring \,
-as the number of epochs and MSE target of the process are controlled
-via other messages (see [pd net-settings]).;
+#X text 502 166 ****;
+#X text 502 36 Note that data is sent out the MSE and epoch outlets during batch training \, but Pd's GUI is locked up during the batch training process itself. A record of the MSE and epoch data can be seen by using [print] to post the data to Pd's console. It will appear suddenly once batch training is complete and Pd's GUI is unlocked. In batch training \, this data is provided mainly for monitoring \, as the number of epochs and MSE target of the process are controlled via other messages (see [pd net-settings]).;
 #X connect 3 0 7 0;
 #X connect 9 0 7 0;
 #X connect 10 0 7 0;
 #X restore 492 353 pd train-net-batch;
 #X text 416 506 by William Brent \, 2018;
 #X text 416 466 [fann]: Pd interface to the FANN 2 library.;
-#X text 309 189 Neural network design is an evolving topic \, and there
-are many different types of nets. [fann] creates a multilayer perceptron
-\, which is useful for classification of structured data.;
-#X floatatom 88 367 10 0 0 1 epochs - -, f 10;
-#X text 211 451 << see inside for how to process output layer data
-, f 17;
-#X text 416 486 Updated and expanded from Davide Morelli's [ann_mlp]
-;
+#X text 309 189 Neural network design is an evolving topic \, and there are many different types of nets. [fann] creates a multilayer perceptron \, which is useful for classification of structured data.;
+#X floatatom 88 367 10 0 0 1 epochs - - 0;
+#X text 211 451 << see inside for how to process output layer data, f 17;
+#X text 416 486 Updated and expanded from Davide Morelli's [ann_mlp];
 #X connect 3 0 9 0;
 #X connect 9 0 4 0;
 #X connect 9 1 16 0;
