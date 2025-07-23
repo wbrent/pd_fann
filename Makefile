@@ -9,10 +9,8 @@ lib.name = fann
 ldlibs = /usr/local/lib/libfann.a
 
 define forLinux
-
   # enable openMP
-	ldlibs += -fopenmp
-
+  ldlibs += -fopenmp
 endef
 
 # specify the location of header files

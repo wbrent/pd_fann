@@ -20,11 +20,11 @@ Next, run:
 
 `make fann_static`
 
-This ensures that libfann.a is produced in the build. Finally, install the library so that it ends up in /usr/local/lib:
+This ensures that libfann.a is produced in the build. Next, make sure that the pd\_fann Makefile references the location of libfann.a by editing the ldlibs line accordingly. Alternatively, copy libfann.a to /usr/local/lib so that the pd_fann Makefile doesn't need to be edited:
 
-`sudo make install`
+`sudo cp src/libfann.a /usr/local/lib`
 
-Once libfann.a is compiled and installed, navigate to the pd_fann directory and run:
+Once libfann.a is compiled and correctly referenced in the pd\_fann Makefile, navigate to the pd\_fann directory and run:
 
 `make`
 
