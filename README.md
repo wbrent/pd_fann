@@ -18,13 +18,15 @@ This tells CMake to use the SDK provided by Xcode so that all necessary headers 
 
 Next, run:
 
-`make fann_static`
-
-This ensures that libfann.a is produced in the build. Next, install the FANN library with:
-
 `sudo make install`
 
-Once libfann.a is compiled and installed, navigate to the pd\_fann directory and run:
+This builds all FANN libraries and installs them to /usr/local/lib. It also installs the library header files to /usr/local/include. However, only FANN's libfann.a static library is required to build the [fann] Pd external. If you don't wish to build all targets of the FANN library, you can build only the static libfann.a library with:
+
+`make fann_static`
+
+In this case, you'll either need to manually copy src/libfann.a to /usr/local/lib and all FANN headers to /usr/local/include, or edit the pd\_fann Makefile to provide the appropriate paths. 
+
+Once the FANN library is compiled and installed, navigate to the pd\_fann directory and run:
 
 `make`
 
