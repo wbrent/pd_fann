@@ -389,7 +389,7 @@
 #X obj 2 2 cnv 15 10 400 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
 #X obj 2 2 cnv 15 400 10 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
 #X text 309 38 [fann] is an interface to the FANN library for neural networks: http://leenissen.dk/fann/wp/;
-#X text 309 78 The FANN library has many functions for creating \, configuring \, training \, running \, and saving neural networks. [fann] accepts a variety of messages for executing FANN functions \, making it possible to create and train a neural net incrementally in real time \, or in batch mode using large datasets saved as separate files. See the series of subpatches below for information on how to create and configure the many parameters of a neural network.;
+#X text 309 88 The FANN library has many functions for creating \, configuring \, training \, running \, and saving neural networks. [fann] accepts a variety of messages for executing FANN functions \, making it possible to create and train a neural net incrementally in real time \, or in batch mode using large datasets saved as separate files. See the series of subpatches below for information on how to create and configure the many parameters of a neural network.;
 #X obj 57 281 fann;
 #N canvas 579 588 897 338 save-and-load-net 0;
 #X obj 54 275 s \$0-fann;
@@ -623,7 +623,7 @@
 #X restore 492 353 pd train-net-batch;
 #X text 416 506 by William Brent \, 2018;
 #X text 416 466 [fann]: Pd interface to the FANN 2 library.;
-#X text 309 189 Neural network design is an evolving topic \, and there are many different types of nets. [fann] creates a multilayer perceptron \, which is useful for classification of structured data.;
+#X text 309 219 Neural network design is an evolving topic \, and there are many different types of nets. [fann] creates a multilayer perceptron \, which is useful for classification of structured data.;
 #X floatatom 88 367 10 0 0 1 epochs - - 0;
 #X text 211 451 << see inside for how to process output layer data, f 17;
 #X text 416 486 Updated and expanded from Davide Morelli's [ann_mlp];

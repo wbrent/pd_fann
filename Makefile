@@ -8,6 +8,13 @@ lib.name = fann
 # ensure linking to static FANN library by specifying the location libfann.a
 ldlibs = /usr/local/lib/libfann.a
 
+define forLinux
+
+  # enable openMP
+	ldlibs += -fopenmp
+
+endef
+
 # specify the location of header files
 cflags = -Iinclude -I/usr/local/include
 

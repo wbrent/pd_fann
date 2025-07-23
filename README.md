@@ -6,13 +6,17 @@ The [fann] object available here features updates and additions made by William 
 
 The FANN library has many functions for creating, configuring, training, running, and saving neural networks. [fann] accepts a variety of messages for executing FANN functions, making it possible to create and train a neural net incrementally in real time, or in batch mode using large datasets saved as separate files.
 
-#### Compiling for macOS
+#### Compiling from source
 
-The [fann] Pd external should be statically linked to the FANN library, which must be compiled from source. After cloning the FANN repository linked above, navigate to the fann directory and run:
+The [fann] Pd external should be statically linked to the FANN library, which must be compiled from source. After cloning the FANN repository linked above, navigate to the fann directory. Under macOS, configure CMake with:
 
 `cmake . -DCMAKE_OSX_SYSROOT=$(xcrun --sdk macosx --show-sdk-path)`
 
-This tells CMake to use the SDK provided by Xcode so that all necessary headers are found. Next, run:
+This tells CMake to use the SDK provided by Xcode so that all necessary headers are found. Under Linux, make sure to configure the build with position independent code (PIC):
+
+`cmake . -DCMAKE_POSITION_INDEPENDENT_CODE=ON`
+
+Next, run:
 
 `make fann_static`
 
