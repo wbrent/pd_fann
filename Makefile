@@ -1,12 +1,12 @@
 # Makefile for [fann]
 
 # specify a location for Pd if desired
-# PDDIR = /home/yourname/somedirectory/pd-0.51-4
+# PDDIR = /home/yourname/somedirectory/pd-0.55-2
 
 lib.name = fann
 
-# specify the location and name of libfann.a
-ldlibs = -L/usr/local/lib -lfann
+# ensure linking to static FANN library by specifying the location libfann.a
+ldlibs = /usr/local/lib/libfann.a
 
 # specify the location of header files
 cflags = -Iinclude -I/usr/local/include
